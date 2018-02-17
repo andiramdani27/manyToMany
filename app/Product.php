@@ -17,9 +17,7 @@ class Product extends Model
 
     public function destinations()
     {
-        return  $this -> belongsToMany('App\Destination');
-
-        
+        return  $this -> belongsToMany('App\Destination')->withTimestamps();
 
     }
 

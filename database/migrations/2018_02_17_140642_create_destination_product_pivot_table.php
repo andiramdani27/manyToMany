@@ -14,8 +14,18 @@ class CreateDestinationProductPivotTable extends Migration
     public function up()
     {
         Schema::table('destination_product', function (Blueprint $table) {
-            //
+            
+            // $table->timestamps(); // not required
+            // $table->softDeletes(); // not required
+
+            // $table->integer('account_id')->unsigned();
+            // $table->foreign('account_id')->references('id')->on('accounts');
+
+            // $table->integer('tag_id')->unsigned()->nullable();
+            // $table->foreign('tag_id')->references('id')->on('tags');
+            
         });
+            
     }
 
     /**
