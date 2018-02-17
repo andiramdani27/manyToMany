@@ -9,12 +9,15 @@ $factory->define(App\Destination::class, function (Faker $faker) {
                 return factory(App\Product::class)->create()->id;
             },
         */    
-        'product_id' => $faker->numberBetween($min = 1, $max = 5), 
+        'product_id' => $faker->numberBetween($min = 1, $max = 10), 
         'destination' => $faker->address,
         'target_person' => $faker->name,
-        'quantity'=> $faker->numberBetween($min = 1, $max = 5)
+        'quantity'=> $faker->numberBetween($min = 1, $max = 5),
 
-        //'updated_at'=> $faker->NOW(),
+        'created_at'=> $faker->dateTimeBetween($startDate = '-5 years', $endDate = '-3 years', $timezone = null),
+        'updated_at'=> $faker->dateTimeBetween($startDate = '-2 years', $endDate = 'now', $timezone = null)
+
+        //nemjó
         //'created_at'=> $faker->iso8601($max = 'now'),
         //'updated_at'=> $faker->iso8601($max = 'now')
     ];
