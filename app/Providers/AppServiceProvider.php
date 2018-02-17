@@ -3,9 +3,10 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
-use Illuminate\Support\Facades\Schema;
+
 {
     /**
      * Bootstrap any application services.
