@@ -15,6 +15,13 @@ class CreateDestinationsTable extends Migration
     {
         Schema::create('destinations', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('product_id')->index();
+            $table->string('destination', 250 );
+            $table->string('target_person', 250);
+            $table->unsignedInteger('quantity');
+
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');
+
             $table->timestamps();
         });
     }
@@ -26,6 +33,11 @@ class CreateDestinationsTable extends Migration
      */
     public function down()
     {
+
+        Schema::table('destinations', function ($table) {
+            $table->dropForeign(['product_id']);
+        });
+
         Schema::dropIfExists('destinations');
     }
 }
