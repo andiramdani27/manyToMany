@@ -13,6 +13,7 @@ use Faker\Generator as Faker;
 |
 */
 
+
 $factory->define(App\User::class, function (Faker $faker) {
     return [
 
@@ -29,3 +30,10 @@ $factory->define(App\User::class, function (Faker $faker) {
         'updated_at'=> $faker->dateTimeBetween($startDate = '-2 years', $endDate = 'now', $timezone = null),
     ];
 });
+
+
+
+
+// factory(App\User::class, 50)->create()->each(function ($u) {
+//     $u->posts()->save(factory(App\Post::class)->make());
+// });

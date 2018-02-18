@@ -12,6 +12,6 @@ class DestinationTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Destination::class, 10)->create();
+        //factory(App\Destination::class, 10)->create();
     }
 }

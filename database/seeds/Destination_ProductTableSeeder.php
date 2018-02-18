@@ -20,7 +20,7 @@ class Destination_ProductTableSeeder extends Seeder
              'product_id' => rand(1,10),
              'destination_id' => $faker->numberBetween(1, 10),
              'created_at'=> $faker->dateTimeBetween($startDate = '-5 years', $endDate = '-3 years', $timezone = null),
-            'updated_at'=> $faker->dateTimeBetween($startDate = '-2 years', $endDate = 'now', $timezone = null),
+             'updated_at'=> $faker->dateTimeBetween($startDate = '-2 years', $endDate = 'now', $timezone = null),
              ]);
          }
 
