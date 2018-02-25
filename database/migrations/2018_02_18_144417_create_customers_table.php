@@ -20,7 +20,7 @@ class CreateCustomersTable extends Migration
             $table->string('email')->unique();
             //$table->string('password');
             //$table->rememberToken();
-            $table->timestamps()->nullable();
+            $table->timestamps();
 
             //$table->foreign('product_id')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');
         });

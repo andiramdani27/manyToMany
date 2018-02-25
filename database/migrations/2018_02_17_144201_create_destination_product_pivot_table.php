@@ -13,16 +13,19 @@ class CreateDestinationProductPivotTable extends Migration
      */
     public function up()
     {
-        // Schema::create('destination_product', function (Blueprint $table) {
-        //     //$table->increments('id');
-        //     $table->timestamps();
+         Schema::create('destination_product', function (Blueprint $table) {
+             //$table->increments('id');
+             
 
-        //     $table->integer('destination_id')->unsigned()->index();
-        //     $table->foreign('destination_id')->references('id')->on('destinations')->onDelete('cascade');//->onUpdate('cascade');
+             $table->integer('destination_id')->unsigned()->index();
+             $table->foreign('destination_id')->references('id')->on('destinations')->onDelete('cascade');//->onUpdate('cascade');
 
-        //     $table->integer('product_id')->unsigned()->index();
-        //     $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');//->onUpdate('cascade');
-        // });
+             $table->integer('product_id')->unsigned()->index();
+             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');//->onUpdate('cascade');
+         
+             $table->timestamps();
+
+            });
     }
 
     /**

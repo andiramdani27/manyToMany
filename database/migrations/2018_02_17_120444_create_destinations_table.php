@@ -14,13 +14,15 @@ class CreateDestinationsTable extends Migration
      public function up()
      {
          Schema::create('destinations', function (Blueprint $table) {
+             
              $table->increments('id');
              $table->unsignedInteger('product_id')->index();
 
-             $table->unsignedInteger('customer_id')->index();
+             //$table->unsignedInteger('customer_id')->index();
 
-             $table->string('target_person', 250);
              $table->string('destination', 250 );
+             $table->string('target_person', 250);
+             
              $table->unsignedInteger('quantity');
 
              //$table->foreign('product_id')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');
