@@ -16,6 +16,6 @@ class Destination extends Model
         //return  $this->belongsTo('App\Product', 'product_id');
         //Remember, Eloquent will automatically determine the proper foreign key column on the Comment model. By convention, Eloquent will take the "snake case" name of the owning model and suffix it with _id. So, for this example, Eloquent will assume the foreign key on the Comment model is post_id.
 
-        return  $this->belongsToMany('App\Product')->withPivot('destination_product')->withTimestamps();
+        return  $this->belongsToMany('App\Product');//->withPivot('destination_product')->withTimestamps();
     }
 }

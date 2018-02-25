@@ -8,7 +8,8 @@ $factory->define(App\Destination::class, function (Faker $faker) {
         'product_id' => function () {
                 return factory(App\Product::class)->create()->id;
             },
-        */    
+        */
+        //many to Many-hez nem kell  ?  
         'product_id' => $faker->numberBetween($min = 1, $max = 10), 
         'destination' => $faker->address,
         'target_person' => $faker->name,

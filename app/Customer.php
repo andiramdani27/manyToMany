@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Customer extends Model
 {
     //public $timestamps = false;
-    protected $fillable= ['name','address','email'];
+    protected $fillable= ['customername','address','email'];
 
 
     //When defining many-to-many relationships, you use belongsToMany() and not hasMany. hasMany is used for one-to-many relationships.

@@ -11,26 +11,26 @@ class CreateDestinationsTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('destinations', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('product_id')->index();
+     public function up()
+     {
+         Schema::create('destinations', function (Blueprint $table) {
+             $table->increments('id');
+             $table->unsignedInteger('product_id')->index();
 
-            $table->unsignedInteger('customer_id')->index();
+             $table->unsignedInteger('customer_id')->index();
 
-            $table->string('target_person', 250);
-            $table->string('destination', 250 );
-            $table->unsignedInteger('quantity');
+             $table->string('target_person', 250);
+             $table->string('destination', 250 );
+             $table->unsignedInteger('quantity');
 
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');
+             //$table->foreign('product_id')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');
 
-            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade')->onUpdate('cascade');
+             //$table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade')->onUpdate('cascade');
 
 
-            $table->timestamps();
-        });
-    }
+             $table->timestamps();
+         });
+     }
 
     /**
      * Reverse the migrations.

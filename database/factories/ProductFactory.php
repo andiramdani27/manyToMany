@@ -4,7 +4,8 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Product::class, function (Faker $faker) {
     return [
-         'name' => $faker->unique()->word,
+         'productname' => $faker->unique()->word,
+         'price'       => $faker->numberBetween(100,5000),
 
          'created_at'=> $faker->dateTimeBetween($startDate = '-5 years', $endDate = '-3 years', $timezone = null),
          'updated_at'=> $faker->dateTimeBetween($startDate = '-2 years', $endDate = 'now', $timezone = null),

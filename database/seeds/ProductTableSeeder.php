@@ -12,9 +12,11 @@ class ProductTableSeeder extends Seeder
      */
     public function run()
     {
-        //factory(App\Product::class, 10)->create();
+        factory(App\Product::class, 10)->create();
+        /*
         factory(App\Product::class, 10)->create()->each(function ($u) {
             $u->destinations()->save(factory(App\Destination::class)->make());
         });
+        */
     }
 }
