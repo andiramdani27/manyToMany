@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 
 
-class Destination_ProductTableSeeder extends Seeder
+class Customer_ProductTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,9 +16,10 @@ class Destination_ProductTableSeeder extends Seeder
         $faker = Faker::create();
         foreach(range(1, 10) as $index)
          {
-             DB::table('destination_product')->insert([
+             DB::table('customer_product')->insert([
+             //'customer_id' => $faker->numberBetween(1, 10),
+             'customer_id' => rand(1, 10),
              'product_id' => rand(1,10),
-             'destination_id' => $faker->numberBetween(1, 10),
              'created_at'=> $faker->dateTimeBetween($startDate = '-5 years', $endDate = '-3 years', $timezone = null),
              'updated_at'=> $faker->dateTimeBetween($startDate = '-2 years', $endDate = 'now', $timezone = null),
              ]);

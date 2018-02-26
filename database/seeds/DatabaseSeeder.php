@@ -15,11 +15,14 @@ class DatabaseSeeder extends Seeder
         $this->call([
             //UsersTableSeeder::class,
             //DestinationTableSeeder::class,
-            //Destination_ProductTableSeeder::class,
+           
             //AddressesTableSeeder::class,
-            ProductTableSeeder::class,
+            //OrdersTableSeeder::class,
+           
             CustomersTableSeeder::class,
-            OrdersTableSeeder::class,
+            ProductTableSeeder::class,
+            //Costumer_ProductTableSeeder::class,
+            UsersTableSeeder::class,
         ]);
     }
 }
