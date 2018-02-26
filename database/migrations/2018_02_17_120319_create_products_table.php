@@ -19,6 +19,8 @@ class CreateProductsTable extends Migration
             $table->string('productname')->unique();
             $table->unsignedInteger('price')->nullable();
 
+            $table->unsignedInteger('VAT')->nullable();
+
             $table->timestamps();
         });
     }

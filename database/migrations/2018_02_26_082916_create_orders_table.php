@@ -13,11 +13,20 @@ class CreateOrdersTable extends Migration
      */
     public function up()
     {
+        //nem jó...!
+        //DB::statement('ALTER TABLE orders ADD COLUMN product_id integer[]');
+        
+
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
 
             $table->unsignedInteger('customer_id')->index();
             $table->unsignedInteger('product_id')->index();
+
+            
+            //OR
+            //https://stackoverflow.com/questions/32954424/laravel-migration-array-type
+            //$table->json('product_id');
             
             $table->unsignedInteger('quantity');
 
@@ -27,7 +36,9 @@ class CreateOrdersTable extends Migration
 
 
             $table->timestamps();
+           
         });
+       
     }
 
     /**

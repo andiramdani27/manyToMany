@@ -13,6 +13,13 @@ class Order extends Model
          'customer_id' => 'required',
          'product_id' => 'required',
      );
+
+   
+    // https://stackoverflow.com/questions/32954424/laravel-migration-array-type
+    // protected $casts = [
+    //     'product_id' => 'array'
+    // ];
+
  
      public function products()
      {

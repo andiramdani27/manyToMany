@@ -6,13 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    //protected $table = 'products'; //do i need this?
+    
     //public $timestamps = false;
-    protected $fillable = ['productname', 'price'];
+    //protected $fillable = ['productname', 'price'];
+    protected $fillable = ['productname', 'price', 'VAT'];
 
     public static $rules = array(
         'name' => 'required',
         'price' => 'required',
+        'VAT' => 'required',
+
     );
 
     public function destinations()
