@@ -5,14 +5,14 @@
 	<div class="navbar-header">
 		<ul class="nav navbar-nav">
 			<li>
-				<a href="{{ URL::to('addresses') }}">Összes cím</a>
+				<a href="{{ URL::to('customers') }}">Összes cím</a>
 			</li>
 			<li>
-				<a href="{{ URL::to('addresses/create') }}">Cím felvitele</a>
+				<a href="{{ URL::to('customers/create') }}">Cím felvitele</a>
       </li>
       <li>
         <a>
-				<form action="{{ route('addresses.destroy', $address) }}" method="post">
+				<form action="{{ route('customers.destroy', $customer) }}" method="post">
 					{{ csrf_field() }} {{ method_field('delete') }}
 					<button class="btn-link text-danger" type="submit">Cím törlése</button>
         </form>
@@ -24,7 +24,7 @@
 
 
 {{-- and end with 
-@section('title', "Edit $address->name" )
+@section('title', "Edit $customer->name" )
 --}}
 
 @section('edit')
@@ -35,35 +35,41 @@
 
     <div class="card">
       <div class="card-block">
-        <h1 class="h3 pb-1">{{ $address->name }}</h1>
+        <h1 class="h3 pb-1">{{ $customer->name }}</h1>
 
-        <form action="{{ url('addresses', $address) }}" method="POST">
+        <form action="{{ url('customers', $customer) }}" method="POST">
           {{ csrf_field() }}
           {{ method_field('patch') }}
           <div class="form-group">
             <label for="student_id">Óvodás azonosítója</label>
-            <input type="text" class="form-control" name="student_id" value="{{ $address->student_id }}">
+            <input type="text" class="form-control" name="student_id" value="{{ $customer->student_id }}">
+          </div>
+          <div class="form-group">
+            <label for="first_name">Keresztnév</label>
+            <input type="text" class="form-control" name="first_name" placeholder="Keresztnév" value="{{ $customer->first_name }}">
+          </div>
+  
+          <div class="form-group">
+            <label for="last_name">Családnév</label>
+            <input type="text" class="form-control" name="last_name" placeholder="Családnév" value="{{ $customer->last_name }}">
           </div>
           <div class="form-group">
                 <label for="city">Lakcím</label>
-                <input type="text" class="form-control" name="city" value="{{ $address->city }}">
+                <input type="text" class="form-control" name="city" value="{{ $customer->city }}">
               </div>
           <div class="form-group">
             <label for="zip">Irányítószám</label>
-            <input type="text" class="form-control" name="zip" value="{{ $address->zip }}">
+            <input type="text" class="form-control" name="zip" value="{{ $customer->zip }}">
           </div>
           <div class="form-group">
             <label for="street_name">Utcanév</label>
-            <input type="text" class="form-control" name="street_name" value="{{ $address->street_name }}">
+            <input type="text" class="form-control" name="street_name" value="{{ $customer->street_name }}">
           </div>
           <div class="form-group">
             <label for="street_number">Házszám</label>
-            <input type="text" class="form-control" name="street_number" value="{{ $address->street_number }}">
+            <input type="text" class="form-control" name="street_number" value="{{ $customer->street_number }}">
           </div>
-          <div class="form-group">
-            <label for="siblings_num">Testvérek száma</label>
-            <input type="text" class="form-control" name="siblings_num" value="{{ $address->siblings_num }}">
-          </div>
+         
           <button type="submit" class="btn btn-primary">
             Update
           </button>

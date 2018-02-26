@@ -15,6 +15,16 @@
           <label for="customer_id">Customer azonosítója</label>
           <input type="text" class="form-control" name="customer_id" placeholder="Vásárló">
         </div>
+
+        <div class="form-group">
+          <label for="first_name">Keresztnév</label>
+          <input type="text" class="form-control" name="first_name" placeholder="Keresztnév">
+        </div>
+
+        <div class="form-group">
+          <label for="last_name">Családnév</label>
+          <input type="text" class="form-control" name="last_name" placeholder="Családnév">
+        </div>
         <div class="form-group">
           <label for="city ">Lakóhely</label>
           <input type="text" class="form-control" name="city" placeholder="Lakóhely">
@@ -32,15 +42,7 @@
           <input type="text" class="form-control" name="street_number" placeholder="Házszám">
         </div>
         
-        <div class="form-group">
-          <label for="first_name">Keresztnév</label>
-          <input type="text" class="form-control" name="first_name" placeholder="Keresztnév">
-        </div>
-
-        <div class="form-group">
-          <label for="last_name">Családnév</label>
-          <input type="text" class="form-control" name="last_name" placeholder="Családnév">
-        </div>
+        
         
         
         

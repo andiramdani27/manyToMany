@@ -7,12 +7,12 @@
 <h1 class="ml-1">Ovisok</h1>
 <div class="row justify-content-center">
 	<ul>
-		@foreach ($addresses as $address)
+		@foreach ($customers as $customer)
 
 
 		<li>
-			Tanuló címe : {{ $address->street_name }} {{ $address->street_number }} Irányítószáma: {{ $address->zip }} Lakóhely :{{ $address->city
-            }}. Testvéreinek száma {{ $address->siblings_num }}
+			Tanuló címe : {{ $customer->street_name }} {{ $customer->street_number }} Irányítószáma: {{ $customer->zip }} Lakóhely :{{ $customer->city
+            }}. Testvéreinek száma {{ $customer->siblings_num }}
             
 		</li>
 
@@ -33,17 +33,21 @@
 	<thead>
 		<tr>
 			<td>ID</td>
+			<td>Vezetéknév</td>
+			<td>Keresztnév</td>
 			<td>Település</td>
 			<td>Irányítószám</td>
 			<td>Utcanév</td>
 			<td>Házszám</td>
-			<td>Testvérek száma</td>
+			
 		</tr>
 	</thead>
 	<tbody>
-		@foreach($addresses as $key => $value)
+		@foreach($customers as $key => $value)
 		<tr>
 			<td>{{ $value->student_id }}</td>
+			<td>{{ $value->first_name }}</td>
+			<td>{{ $value->last_name }}</td>	
 			<td>{{ $value->city }}</td>
 			<td>{{ $value->zip }}</td>
 			<td>{{ $value->street_name }}</td>
@@ -57,10 +61,10 @@
 				
 
 			
-				<a class="btn btn-small btn-success" href="{{ URL::to('addresses/' . $value->id) }}">Mutasd a címet</a>
+				<a class="btn btn-small btn-success" href="{{ URL::to('customers/' . $value->id) }}">Mutasd a vasarlot</a>
 
 				
-				<a class="btn btn-small btn-info" href="{{ URL::to('addresses/' . $value->id . '/edit') }}">Címet módosít</a>
+				<a class="btn btn-small btn-info" href="{{ URL::to('customers/' . $value->id . '/edit') }}">vasarlót módosít</a>
 
 					   
 
