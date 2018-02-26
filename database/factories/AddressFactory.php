@@ -22,9 +22,9 @@ $factory->define(App\Address::class, function (Faker $faker) {
        
         //'customer_id' => ($increment++) ,
 
-        'customer_id' => $faker->unique()->randomElement($array = array ('1','2','3','4','5','6','7','8','9','10'), $count = 1),
         //'customer_id' => App\Customer::inRandomOrder()->first()->id,
-        //'customer_id' => $faker->unique()->numberBetween(1,10),
+        //'customer_id' => $faker->unique()->randomElement($array = array ('1','2','3','4','5','6','7','8','9','10')),
+        'customer_id' => $faker->unique()->numberBetween(1,10),
         'zip'=> $faker->numberBetween($min = 1000, $max = 9999),
         'city'=> $faker->smallerCity,
         'street_name' => $faker->streetName,
