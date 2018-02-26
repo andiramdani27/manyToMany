@@ -16,8 +16,11 @@ class CreateAddressesTable extends Migration
         Schema::create('addresses', function (Blueprint $table) {
 
                 $table->increments('id');
-                $table->unsignedInteger('customer_id');
-                $table->integer('zip',false,true)->nullable();
+
+                $table->unsignedInteger('customer_id')->index();
+
+                //$table->integer('zip',false,true)->nullable();
+                $table->unsignedInteger('zip')->nullable();
                 $table->string('city', 250)->nullable();
                 $table->string('street_name', 250)->nullable();
                 $table->string('street_number',250)->nullable();
