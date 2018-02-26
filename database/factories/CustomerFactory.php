@@ -5,8 +5,9 @@ use Faker\Generator as Faker;
 $factory->define(App\Customer::class, function (Faker $faker) {
     return [
         
-        'customername' => $faker->name,
-        'address' => $faker->address,
+        'first_name' => $faker->firstname,
+        'last_name' => $faker->lastname,
+        //'address' => $faker->address,
         //'email' => $faker-> email,
         'email' => $faker->unique()->safeEmail,
         'phonenumber' => $faker->unique()->phonenumber,
