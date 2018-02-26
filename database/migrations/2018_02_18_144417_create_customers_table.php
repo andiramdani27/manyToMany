@@ -18,11 +18,14 @@ class CreateCustomersTable extends Migration
            
             $table->string('last_name', 250);
             $table->string('first_name', 250);
-
             $table->string('email')->unique();
-            $table->string('phonenumber')->unique();
-            //$table->string('password');
-            //$table->rememberToken();
+            $table->string('phone_number')->unique();
+
+            $table->unsignedInteger('zip')->nullable();
+            $table->string('city', 250)->nullable();
+            $table->string('street_name', 250)->nullable();
+            $table->string('street_number',250)->nullable();
+          
             $table->timestamps();
 
             //$table->foreign('product_id')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');

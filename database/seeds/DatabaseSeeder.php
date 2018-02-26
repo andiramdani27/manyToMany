@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             //Destination_ProductTableSeeder::class,
             CustomersTableSeeder::class,
             OrdersTableSeeder::class,
-            AddressesTableSeeder::class
+            //AddressesTableSeeder::class
         ]);
     }
 }
