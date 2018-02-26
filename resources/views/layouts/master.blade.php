@@ -9,8 +9,8 @@
                         
                 </div>
                 <ul class="nav navbar-nav">
-                        <li><a href="{{ URL::to('students') }}">Összes óvodás</a></li>
-                        <li><a href="{{ URL::to('students/create') }}">Óvodás felvitele</a>
+                        <li><a href="{{ URL::to('customers') }}">Összes óvodás</a></li>
+                        <li><a href="{{ URL::to('customers/create') }}">Óvodás felvitele</a>
                 </ul>
         </nav>
         

@@ -14,7 +14,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+        $customers = Customer::all();
+        return view('customers.index', compact('customers'));
     }
 
     /**
@@ -24,7 +25,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        return view('customers.create');
     }
 
     /**
@@ -35,7 +36,12 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Customer
+        ::create($request->all())
+        ->studentproducts()
+        ->create($request->all());
+        //Session::flash('message', 'Óvódás sikeresen felvive!');
+        return redirect('customers')->with('status', 'Új cím felvive!');
     }
 
     /**
@@ -46,7 +52,7 @@ class CustomerController extends Controller
      */
     public function show(Customer $customer)
     {
-        //
+        return view('customers.show', ['customer' => $customer]);
     }
 
     /**
@@ -57,7 +63,7 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
-        //
+        return view('customers.edit', ['customer' => $customer]);
     }
 
     /**
@@ -69,7 +75,9 @@ class CustomerController extends Controller
      */
     public function update(Request $request, Customer $customer)
     {
-        //
+        $customer->update($request->all());
+       
+        return redirect('customers');
     }
 
     /**
@@ -80,6 +88,7 @@ class CustomerController extends Controller
      */
     public function destroy(Customer $customer)
     {
-        //
+        $customer->delete();
+        return redirect('customers');
     }
 }
