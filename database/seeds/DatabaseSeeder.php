@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
             ProductTableSeeder::class,
             DestinationTableSeeder::class,
             Destination_ProductTableSeeder::class,
-            CustomersTableSeeder::class
+            CustomersTableSeeder::class,
+            OrdersTableSeeder::class
         ]);
     }
 }
