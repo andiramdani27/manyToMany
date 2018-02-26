@@ -8,7 +8,7 @@ class Address extends Model
     
 {
     //public $timestamps = false;
-    protected $fillable = ['customer_id', 'street_name', 'street_number', 'zip', 'city'];
+    protected $fillable = ['customer_id','zip', 'city', 'street_name', 'street_number' ];
     
     public function customer()   
     {

@@ -21,13 +21,12 @@ $factory->define(App\Address::class, function (Faker $faker) {
         */
         //'student_id' => App\User::inRandomOrder()->first()->id,
         //'customer_id' => ($increment++) ,
-        'customer_id' => App\Customer::inRandomOrder()->first()->id,//->unique(),
+        'customer_id' => $faker->unique()->numberBetween(1,10),
         'zip'=> $faker->numberBetween($min = 1000, $max = 9999),
         'city'=> $faker->smallerCity,
         'street_name' => $faker->streetName,
         'street_number' => $faker->buildingNumber, //numberBetween($min = 1, $max = 200),
         
-
         'created_at'=> $faker->dateTimeBetween($startDate = '-5 years', $endDate = '-3 years', $timezone = null),
         'updated_at'=> $faker->dateTimeBetween($startDate = '-2 years', $endDate = 'now', $timezone = null),
        
