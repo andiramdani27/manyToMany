@@ -16,6 +16,7 @@ class CreateDestinationsTable extends Migration
          Schema::create('destinations', function (Blueprint $table) {
              
              $table->increments('id');
+             
              $table->unsignedInteger('product_id')->index();
 
              //$table->unsignedInteger('customer_id')->index();

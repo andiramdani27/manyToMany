@@ -28,7 +28,7 @@ class CreateOrdersTable extends Migration
             //https://stackoverflow.com/questions/32954424/laravel-migration-array-type
             //$table->json('product_id');
             
-            $table->unsignedInteger('quantity');
+            //$table->unsignedInteger('quantity');
 
             $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');

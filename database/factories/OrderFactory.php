@@ -15,7 +15,7 @@ $factory->define(App\Order::class, function (Faker $faker) {
         //'product_id'=> $faker->unique()->randomElement($array = array ('2','1','3','4','5','6','7','8','9','10')),
 
 
-        'quantity' => $faker->numberBetween(1,20),
+        //'quantity' => $faker->numberBetween(1,20),
         
         'created_at'=> $faker->dateTimeBetween($startDate = '-3 years', $endDate = '-2 years', $timezone = null),
         'updated_at'=> $faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now', $timezone = null),
