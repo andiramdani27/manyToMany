@@ -78,7 +78,7 @@
 			Termék : {{ $product->product_name }} ,
 			Ár : {{ $product->price }} forint , 
 			ÁFA : {{ $product->VAT }} ,
-			Rendelt mennyiség : {{ $product->ordered_quantity }} <br>
+			{{--  Rendelt mennyiség : {{ $product->ordered_quantity }} <br>  --}}
 			@endforeach
 
 			<br>

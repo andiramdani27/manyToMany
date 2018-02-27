@@ -18,10 +18,7 @@
         <form action="{{ url('customers', $customer) }}" method="POST">
           {{ csrf_field() }}
           {{ method_field('patch') }}
-          {{--  <div class="form-group">
-            <label for="student_id">Óvodás azonosítója</label>
-            <input type="text" class="form-control" name="student_id" value="{{ $customer->student_id }}">
-          </div>  --}}
+         
           <div class="form-group">
             <label for="first_name">Keresztnév</label>
             <input type="text" class="form-control" name="first_name" placeholder="Keresztnév" value="{{ $customer->first_name }}">

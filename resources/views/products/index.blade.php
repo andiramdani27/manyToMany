@@ -13,7 +13,7 @@
 			<td>Név</td>
 			<td>Ár</td>
 			<td>ÁFA</td>
-			<td>Rendelt mennyiség</td>
+			{{--  <td>Rendelt mennyiség</td>  --}}
 			
 
 		</tr>
@@ -26,7 +26,7 @@
 			<td>{{ $product->product_name }}</td>
 			<td>{{ $product->price }}</td>
 			<td>{{ $product->VAT }}</td>
-			<td>{{ $product->ordered_quantity }}</td>
+			{{--  <td>{{ $product->ordered_quantity }}</td>  --}}
 			
 			<td>
 				<!-- delete the (uses the destroy method DESTROY /products/{id} -->

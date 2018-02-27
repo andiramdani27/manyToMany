@@ -37,7 +37,7 @@
                 <li class="list-group-item text-muted">Prod : {{ $product->product_name }}</li>
                 <li class="list-group-item text-muted">Ár : {{ $product->price }} forint</li>
                 <li class="list-group-item text-muted">ÁFA : {{ $product->VAT }}</li>
-                <li class="list-group-item text-muted">Rendelt mennyiség : {{ $product->ordered_quantity }}</li>
+                {{--  <li class="list-group-item text-muted">Rendelt mennyiség : {{ $product->ordered_quantity }}</li>  --}}
                 @endforeach
                 
               </ul>

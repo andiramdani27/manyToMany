@@ -29,7 +29,7 @@
                 <li class="list-group-item text-muted">Terméknév: {{ $product->product_name }}</li>
                 <li class="list-group-item text-muted">Ár: {{ $product->price }}</li>
                 <li class="list-group-item text-muted">ÁFA: {{ $product->VAT }}</li>
-                <li class="list-group-item text-muted">Rendelt mennyiség: {{ $product->ordered_quantity }}</li>
+                {{--  <li class="list-group-item text-muted">Rendelt mennyiség: {{ $product->ordered_quantity }}</li>  --}}
                 @foreach($product -> customers as $customer)
                 <li class="list-group-item text-muted">name: {{ $customer->last_name }} {{$customer->first_name }}</li>
                 <li class="list-group-item text-muted">telefonszám: {{$customer->phone_number }} </li>

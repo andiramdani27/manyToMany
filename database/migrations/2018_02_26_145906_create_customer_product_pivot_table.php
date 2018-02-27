@@ -14,10 +14,12 @@ class CreateCustomerProductPivotTable extends Migration
     public function up()
     {
         Schema::create('customer_product', function (Blueprint $table) {
-            //$table->increments('id');
+            $table->increments('id');
 
             $table->unsignedInteger('customer_id')->index();
             $table->unsignedInteger('product_id')->index();
+
+            $table->unsignedInteger('ordered_quantity')->nullable();
 
             //OR
             //https://stackoverflow.com/questions/32954424/laravel-migration-array-type
