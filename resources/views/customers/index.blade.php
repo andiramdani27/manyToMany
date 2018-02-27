@@ -11,8 +11,12 @@
 
 
 		<li>
+			{{ $customer->last_name }} {{ $customer->first_name }} 
+			<hr style="color:blue;" >
 			Vásárló címe : {{ $customer->street_name }} {{ $customer->street_number }} Irányítószáma: {{ $customer->zip }} Lakóhely :{{ $customer->city
-            }}. Email: {{ $customer->email }} Telefon : {{ $customer->phone_number }}
+			}}. Email: {{ $customer->email }} Telefon : {{ $customer->phone_number }}
+			<br>
+			<hr>
             
 		</li>
 
@@ -47,7 +51,7 @@
 	<tbody>
 		@foreach($customers as $key => $value)
 		<tr>
-			<td>{{ $value->student_id }}</td>
+			<td>{{ $value->customer_id }}</td>
 			<td>{{ $value->first_name }}</td>
 			<td>{{ $value->last_name }}</td>	
 			<td>{{ $value->city }}</td>

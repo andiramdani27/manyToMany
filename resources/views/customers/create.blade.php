@@ -35,7 +35,7 @@
         </div>
         <div class="form-group">
           <label for="street_name">Utcanév</label>
-          <input type="text" class="form-control" name="street_name" placeholder="utcanév">
+          <input type="text" class="form-control" name="street_name" placeholder="Utcanév">
         </div>
         <div class="form-group">
           <label for="street_number">Házszám</label>
@@ -44,7 +44,12 @@
 
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="text" class="form-control" name="email" placeholder="Házszám">
+          <input type="text" class="form-control" name="email" placeholder="Email">
+        </div>
+
+        <div class="form-group">
+          <label for="phone_number">Telefonszám</label>
+          <input type="text" class="form-control" name="phone_number" placeholder="Telefonszám">
         </div>
         
         

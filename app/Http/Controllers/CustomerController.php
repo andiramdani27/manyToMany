@@ -36,12 +36,20 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
+
+        Customer
+        ::create($request->all());
+        Session::flash('message', 'Vásárló sikeresen felvive!');
+        return redirect('customers')->with('status', 'Új product/vásárló felvive!');
+
+        /*
         Customer
         ::create($request->all())
-        ->studentproducts()
+        ->products()
         ->create($request->all());
-        //Session::flash('message', 'Óvódás sikeresen felvive!');
-        return redirect('customers')->with('status', 'Új cím felvive!');
+        //Session::flash('message', 'Vásárló sikeresen felvive!');
+        return redirect('customers')->with('status', 'Új product/vásárló felvive!');
+        */
     }
 
     /**
@@ -75,6 +83,7 @@ class CustomerController extends Controller
      */
     public function update(Request $request, Customer $customer)
     {
+
         $customer->update($request->all());
        
         return redirect('customers');

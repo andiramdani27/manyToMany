@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="{{ asset('images/favicon.jpg') }}">
     <!-- CSFR token for ajax call -->
     <meta name="_token" content="{{ csrf_token() }}" />
-    <title>Manage Students</title>
+    <title>Manage Customers</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> {{--
     <link rel="styleeheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> --}}

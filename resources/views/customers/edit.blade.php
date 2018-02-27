@@ -5,16 +5,16 @@
 	<div class="navbar-header">
 		<ul class="nav navbar-nav">
 			<li>
-				<a href="{{ URL::to('customers') }}">Összes cím</a>
+				<a href="{{ URL::to('customers') }}">Összes Vásárló</a>
 			</li>
 			<li>
-				<a href="{{ URL::to('customers/create') }}">Cím felvitele</a>
+				<a href="{{ URL::to('customers/create') }}">Vásárló felvitele</a>
       </li>
       <li>
         <a>
 				<form action="{{ route('customers.destroy', $customer) }}" method="post">
 					{{ csrf_field() }} {{ method_field('delete') }}
-					<button class="btn-link text-danger" type="submit">Cím törlése</button>
+					<button class="btn-link text-danger" type="submit">Vásárló törlése</button>
         </form>
       </a>
       </li>
@@ -40,10 +40,10 @@
         <form action="{{ url('customers', $customer) }}" method="POST">
           {{ csrf_field() }}
           {{ method_field('patch') }}
-          <div class="form-group">
+          {{--  <div class="form-group">
             <label for="student_id">Óvodás azonosítója</label>
             <input type="text" class="form-control" name="student_id" value="{{ $customer->student_id }}">
-          </div>
+          </div>  --}}
           <div class="form-group">
             <label for="first_name">Keresztnév</label>
             <input type="text" class="form-control" name="first_name" placeholder="Keresztnév" value="{{ $customer->first_name }}">
@@ -68,6 +68,16 @@
           <div class="form-group">
             <label for="street_number">Házszám</label>
             <input type="text" class="form-control" name="street_number" value="{{ $customer->street_number }}">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" name="email" value="{{ $customer->email }}">
+          </div>
+
+          <div class="form-group">
+            <label for="phone_number">Telefonszám</label>
+            <input type="text" class="form-control" name="phone_number" value="{{ $customer->phone_number }}">
           </div>
          
           <button type="submit" class="btn btn-primary">

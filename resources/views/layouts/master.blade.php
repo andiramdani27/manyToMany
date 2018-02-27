@@ -9,8 +9,8 @@
                         
                 </div>
                 <ul class="nav navbar-nav">
-                        <li><a href="{{ URL::to('customers') }}">Összes óvodás</a></li>
-                        <li><a href="{{ URL::to('customers/create') }}">Óvodás felvitele</a>
+                        <li><a href="{{ URL::to('customers') }}">Összes Vásárló</a></li>
+                        <li><a href="{{ URL::to('customers/create') }}">Vásárló felvitele</a>
                 </ul>
         </nav>
         
