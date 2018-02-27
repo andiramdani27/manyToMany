@@ -10,10 +10,11 @@
 
 
 		<li>
-			Product neve : {{ $product->product_name }} <br> 
+			Termék neve : {{ $product->product_name }} <br> 
 			Ára: {{ $product->price }} <br>
-			({{ $product->VAT }}) <br>
-			{{ $product->ordered_quantity}}  
+			AFA :({{ $product->VAT }})% <br>
+			Rendelt:mennyiség: {{ $product->ordered_quantity}}  
+			<hr>
 			 
 
 		</li>
@@ -60,7 +61,7 @@
 				
 				
 				{{--Miért a legutolsót akarja törölni?--}}
-				<a class="btn btn-small btn-danger" href="{{ route('products.destroy', $product->id) }}">Product törlése</a>
+				{{--  <a class="btn btn-small btn-danger" href="{{ route('products.destroy', $product->id) }}">Product törlése</a>  --}}
 
 			</td>
 		</tr>

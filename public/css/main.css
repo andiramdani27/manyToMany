@@ -5,3 +5,12 @@
 .inner_grid {
     grid-column-start: 15px;
 }
+
+footer {
+    background-color: rgba(87, 136, 240, 0.27);
+    margin-bottom: 1px;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: 500px;
+    position: relative;
+}
