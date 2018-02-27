@@ -11,10 +11,10 @@
     <form class="card" action="/customers" method="post">
       <div class="card-block">
         {{ csrf_field() }}
-        <div class="form-group">
+        {{--  <div class="form-group">
           <label for="customer_id">Customer azonosítója</label>
           <input type="text" class="form-control" name="customer_id" placeholder="Vásárló">
-        </div>
+        </div>  --}}
 
         <div class="form-group">
           <label for="first_name">Keresztnév</label>
@@ -40,6 +40,11 @@
         <div class="form-group">
           <label for="street_number">Házszám</label>
           <input type="text" class="form-control" name="street_number" placeholder="Házszám">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" name="email" placeholder="Házszám">
         </div>
         
         

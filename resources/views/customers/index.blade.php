@@ -4,15 +4,15 @@
 
 @section('main')
 
-<h1 class="ml-1">Ovisok</h1>
+<h1 class="ml-1">Customers</h1>
 <div class="row justify-content-center">
 	<ul>
 		@foreach ($customers as $customer)
 
 
 		<li>
-			Tanuló címe : {{ $customer->street_name }} {{ $customer->street_number }} Irányítószáma: {{ $customer->zip }} Lakóhely :{{ $customer->city
-            }}. Testvéreinek száma {{ $customer->siblings_num }}
+			Vásárló címe : {{ $customer->street_name }} {{ $customer->street_number }} Irányítószáma: {{ $customer->zip }} Lakóhely :{{ $customer->city
+            }}. Email: {{ $customer->email }} Telefon : {{ $customer->phone_number }}
             
 		</li>
 
@@ -39,6 +39,8 @@
 			<td>Irányítószám</td>
 			<td>Utcanév</td>
 			<td>Házszám</td>
+			<td>Email</td>
+			<td>Telefon</td>
 			
 		</tr>
 	</thead>
@@ -52,7 +54,8 @@
 			<td>{{ $value->zip }}</td>
 			<td>{{ $value->street_name }}</td>
 			<td>{{ $value->street_number }}</td>
-			<td>{{ $value->siblings_num }}</td>
+			<td>{{ $value->email }}</td>
+			<td>{{ $value->phone_number }}</td>
 			
 
 			<!-- we will also add show, edit, and delete buttons -->
@@ -64,7 +67,7 @@
 				<a class="btn btn-small btn-success" href="{{ URL::to('customers/' . $value->id) }}">Mutasd a vasarlot</a>
 
 				
-				<a class="btn btn-small btn-info" href="{{ URL::to('customers/' . $value->id . '/edit') }}">vasarlót módosít</a>
+				<a class="btn btn-small btn-info" href="{{ URL::to('customers/' . $value->id . '/edit') }}">Vásárlót módosít</a>
 
 					   
 
