@@ -1,31 +1,9 @@
 @extends ('layouts.master')
 
 
-<nav class="navbar navbar-inverse">
-	<div class="navbar-header">
-		<ul class="nav navbar-nav">
-			<li>
-				<a href="{{ URL::to('customers') }}">Összes Vásárló</a>
-			</li>
-			<li>
-				<a href="{{ URL::to('customers/create') }}">Vásárló felvitele</a>
-      </li>
-      <li>
-        <a>
-				<form action="{{ route('customers.destroy', $customer) }}" method="post">
-					{{ csrf_field() }} {{ method_field('delete') }}
-					<button class="btn-link text-danger" type="submit">Vásárló törlése</button>
-        </form>
-      </a>
-      </li>
-		</ul>
-	</div>
-</nav>
-
-
-{{-- and end with 
+ 
 @section('title', "Edit $customer->name" )
---}}
+
 
 @section('edit')
 

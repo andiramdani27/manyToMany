@@ -9,6 +9,7 @@
 			{{ $customer->last_name }} {{ $customer->first_name }}
 			<hr style="color:blue;"> Vásárló címe : <br> Lakóhely :{{ $customer->city }}, {{ $customer->street_name }} {{ $customer->street_number }} <br>Email:
 			{{ $customer->email }} <br>Telefon : {{ $customer->phone_number }}
+			{{--  {{ $customer->products->product_name }}  --}}
 			<br>
 			<hr>
 		</li>
@@ -33,6 +34,8 @@
 			<td>Házszám</td>
 			<td>Email</td>
 			<td>Telefon</td>
+			{{--  <td>PN</td>  --}}
+
 		</tr>
 	</thead>
 	<tbody>
@@ -47,11 +50,9 @@
 			<td>{{ $value->street_number }}</td>
 			<td>{{ $value->email }}</td>
 			<td>{{ $value->phone_number }}</td>
+			{{--  <td>{{ $key->product_name }}</td>  --}}
 
-			<!-- we will also add show, edit, and delete buttons -->
 			<td>
-
-
 				<a class="btn btn-small btn-success" href="{{ URL::to('customers/' . $value->id) }}">Mutasd a vasarlot</a>
 
 				<a class="btn btn-small btn-info" href="{{ URL::to('customers/' . $value->id . '/edit') }}">Vásárlót módosít</a>
@@ -73,7 +74,15 @@
 			<div class=inner_grid>
 			{{ $customer->last_name }} {{ $customer->first_name }}
 			<hr style="color:blue;"> Vásárló címe : <br> Lakóhely :{{ $customer->city }}, {{ $customer->street_name }} {{ $customer->street_number }} <br>Email:
-			{{ $customer->email }} <br>Telefon : {{ $customer->phone_number }}
+			{{ $customer->email }} <br>Telefon : {{ $customer->phone_number }} <br>
+			
+			@foreach ($customer->products as $product)
+			Termék : {{ $product->product_name }} ,
+			Ár : {{ $product->price }} forint , 
+			ÁFA : {{ $product->VAT }} ,
+			Rendelt mennyiség : {{ $product->ordered_quantity }} <br>
+			@endforeach
+
 			<br>
 			<hr>
 			</div>
