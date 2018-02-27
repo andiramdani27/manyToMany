@@ -1,0 +1,7 @@
+.grid {
+    display: grid,
+}
+
+.inner_grid {
+    grid-column-start: 15px;
+}
