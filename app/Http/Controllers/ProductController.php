@@ -14,7 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::orderBy('price', 'desc')->get();
+      return view('products.index', ['products' => $products]);
     }
 
     /**
@@ -57,7 +58,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        $customers = \App\customer::get()->pluck('first_name', 'id')->sortBy('first_name');
+      return view('products.edit', compact('product', 'customers'));
     }
 
     /**
@@ -69,7 +71,9 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $product->update($request->all());
+        $product->customers()->sync($request->customers);
+        return redirect('products');
     }
 
     /**

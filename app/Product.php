@@ -20,7 +20,8 @@ class Product extends Model
 
     public function customers()
     {
-        return  $this->belongsToMany('App\Customer')->withPivot('customer_product')->withTimestamps();
+        //return  $this->belongsToMany('App\Customer')->withPivot('customer_product')->withTimestamps();
+        return  $this->belongsToMany('App\Customer')->withTimestamps();
 
     }
 
