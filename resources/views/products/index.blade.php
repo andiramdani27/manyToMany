@@ -1,33 +1,10 @@
 @extends ('layouts.master')
 
 
+
+
+
 @section('main')
-
-<h1 class="ml-1">Products</h1>
-<div class="row justify-content-center">
-	<ul>
-		@foreach ($products as $product)
-
-
-		<li>
-			Termék neve : {{ $product->product_name }} <br> 
-			Ára: {{ $product->price }} <br>
-			AFA :({{ $product->VAT }})% <br>
-			Rendelt:mennyiség: {{ $product->ordered_quantity}}  
-			<hr>
-			 
-
-		</li>
-
-		@endforeach
-
-	</ul>
-
-</div>
-@endsection
-
-
-@section('index')
 
 <table class="table table-striped table-bordered">
 	<thead>
@@ -68,6 +45,31 @@
 		@endforeach
 	</tbody>
 </table>
+@endsection
+
+@section('index')
+
+<h1 class="ml-1">Products</h1>
+<div class="row justify-content-center">
+	<ul>
+		@foreach ($products as $product)
+
+
+		<li>
+			Termék neve : {{ $product->product_name }} <br> 
+			Ára: {{ $product->price }} <br>
+			AFA :({{ $product->VAT }})% <br>
+			Rendelt:mennyiség: {{ $product->ordered_quantity}}  
+			<hr>
+			 
+
+		</li>
+
+		@endforeach
+
+	</ul>
+
+</div>
 @endsection
 
 

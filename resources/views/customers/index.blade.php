@@ -34,8 +34,7 @@
 			<td>Házszám</td>
 			<td>Email</td>
 			<td>Telefon</td>
-			{{--  <td>PN</td>  --}}
-
+	
 		</tr>
 	</thead>
 	<tbody>
@@ -50,8 +49,7 @@
 			<td>{{ $value->street_number }}</td>
 			<td>{{ $value->email }}</td>
 			<td>{{ $value->phone_number }}</td>
-			{{--  <td>{{ $key->product_name }}</td>  --}}
-
+		
 			<td>
 				<a class="btn btn-small btn-success" href="{{ URL::to('customers/' . $value->id) }}">Mutasd a vasarlot</a>
 
