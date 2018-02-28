@@ -50,12 +50,19 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+        /*
         Customer
         ::create($request->all())
         ->products()
         ->create($request->all());
         //Session::flash('message', 'Vásárló sikeresen felvive!');
-        return redirect('orders')->with('status', 'Új product/vásárló felvive!');
+        return redirect('orders')->with('status', 'Új rendelés felvive!');
+        */
+        $order = new Order;
+        $order->update($request->product_id, $request->customer_id, $request->ordered_quantity);
+        $order -> save();
+        
+        return redirect('orders')->with('status', 'Új rendelés felvive!');
     }
 
     /**

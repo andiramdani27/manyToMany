@@ -41,6 +41,60 @@
 
 
 
+{{--  @extends ('layouts.master') 
+
+@section('title', "Order") 
+@section('main') 
+
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <h1 class="h4 text-uppercase">Rendelés</h1>
+    <div class="card">
+      <div class="card-block">
+        <h1 class="h3 pb-1"></h1>
+            <form action="/orders" method="post" id="orderform">
+          {{ csrf_field() }} {{ method_field('patch') }}
+         
+         
+          <h3 class='h5 pb-2'>Rendelések</h3>
+          <div class="row form-group">
+            @foreach ($customers as $id => $customer)
+            <div class="form-check col-md-6">
+              <label class="form-check-label" for="{{ $customer }}">
+                  <input type="checkbox" name="customers[]" value="{{ $id }}"
+                    {{ $customer->products()->allRelatedIds()->contains($id) ? "checked" : "" }}>
+                  {{ $customer->last_name  }} 
+                </label>
+            </div>
+            
+            @endforeach
+          </div>
+            <div class="row form-group">
+            @foreach ($products as $id => $product)
+            <div class="form-check col-md-6">
+              <label class="form-check-label" for="{{ $product }}">
+                  <input type="checkbox" name="products[]" value="{{ $id }}"
+                    {{ $product->customers()->allRelatedIds()->contains($id) ? "checked" : "" }}>
+                  {{ $product->product_name }} 
+                </label>
+            </div>
+            @endforeach
+          </div>  
+          <div class="form-group">
+            <label for="ordered_quantity">rendelt mennyiség</label>
+            <input type="number" class="form-control" name="ordered_quantity" 
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            Update
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div> 
+@endsection  --}}
+
 
 @extends ('layouts.master') 
 
@@ -53,12 +107,13 @@
     <div class="card">
       <div class="card-block">
         <h1 class="h3 pb-1"></h1>
-        {{--  <form action="{{ url('orders', $order) }}" method="post">  --}}
-            <form action="/orders" method="post">
+ 
+            <form action="/orders" method="post" id="orderform">
           {{ csrf_field() }} {{ method_field('patch') }}
          
          
           <h3 class='h5 pb-2'>Rendelések</h3>
+          
           <div class="row form-group">
             @foreach ($customers as $id => $customer)
             {{--  @foreach ($products as $id => $product)  --}}
@@ -84,18 +139,39 @@
             </div>
             @endforeach
           </div>  
-          <div class="form-group">
-            <label for="ordered_quantity">rendelt mennyiség</label>
-            <input type="number" class="form-control" name="ordered_quantity" 
-            {{--  value="{{ $order->ordered_quantity }}">  --}}
-          </div>
+          
+          <div>
+          <select name="product_id" form="orderform">Product_id
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="ordered_quantity">rendelt mennyiség</label>
+          <input type="number" class="form-control" name="ordered_quantity" 
+          {{--  value="{{ $order->ordered_quantity }}">  --}}
+        </div>
 
           <button type="submit" class="btn btn-primary">
             Update
           </button>
         </form>
+       
+          
+        
       </div>
     </div>
   </div>
 </div> 
 @endsection
+
+
+
