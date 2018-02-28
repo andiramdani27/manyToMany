@@ -42,7 +42,7 @@
           @if($errors->has('ordered_quantity'))
               <span class="help-block">{{ $errors->first('ordered_quantity') }}</span>
           @endif
-      
+      </div>
 
         <button type="submit" class="btn btn-primary">
           Felvisz

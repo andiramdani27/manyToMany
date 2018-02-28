@@ -28,6 +28,7 @@ class UsersTableSeeder extends Seeder
              //'customer_id' => $faker->numberBetween(1, 10),
              'customer_id' => rand(1, 10),
              'product_id' => rand(1,10),
+             'ordered_quantity' => rand(1,10),
              'created_at'=> $faker->dateTimeBetween($startDate = '-5 years', $endDate = '-3 years', $timezone = null),
              'updated_at'=> $faker->dateTimeBetween($startDate = '-2 years', $endDate = 'now', $timezone = null),
              ]);

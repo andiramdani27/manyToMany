@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->unsignedInteger('price')->nullable();
             $table->unsignedInteger('VAT')->nullable();
 
-            $table->unsignedInteger('ordered_quantity')->nullable();
+            //$table->unsignedInteger('ordered_quantity')->nullable();
 
             $table->timestamps();
         });

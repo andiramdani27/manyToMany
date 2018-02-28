@@ -8,7 +8,7 @@ $factory->define(App\Product::class, function (Faker $faker) {
          'price'       => $faker->numberBetween(100,5000),
          'VAT'=> $faker->randomElement($array = array ('5', '18', '27')),
 
-         'ordered_quantity' => $faker->numberBetween(1,20),
+         //'ordered_quantity' => $faker->numberBetween(1,20),
 
          'created_at'=> $faker->dateTimeBetween($startDate = '-5 years', $endDate = '-3 years', $timezone = null),
          'updated_at'=> $faker->dateTimeBetween($startDate = '-2 years', $endDate = 'now', $timezone = null),

@@ -19,6 +19,7 @@ class CreateCustomerProductPivotTable extends Migration
             $table->unsignedInteger('customer_id')->index();
             $table->unsignedInteger('product_id')->index();
 
+            
             $table->unsignedInteger('ordered_quantity')->nullable();
 
             //OR
