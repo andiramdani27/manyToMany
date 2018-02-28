@@ -37,21 +37,20 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        /*
         Customer
         ::create($request->all());
         Session::flash('message', 'Vásárló sikeresen felvive!');
         return redirect('customers')->with('status', 'Új product/vásárló felvive!');
-        */
-
         
+
+        /*
         Customer
         ::create($request->all())
         ->products()
         ->create($request->all());
         //Session::flash('message', 'Vásárló sikeresen felvive!');
         return redirect('customers')->with('status', 'Új product/vásárló felvive!');
-        
+        */
     }
 
     /**

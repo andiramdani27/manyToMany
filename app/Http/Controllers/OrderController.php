@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use App\Product;
+use App\Customer;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -14,7 +16,15 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        /*
+        $orders =Order::all();
+        return view('orders.index', compact('orders'));
+        */
+        $orders = Order::all();
+        $products = Product::all();
+        $customers = Customer::all();
+       
+        return view('orders.index', compact('orders','products', 'customers'));
     }
 
     /**
@@ -24,7 +34,12 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        //return view('orders.create');
+        $orders =Order::all();
+        $products = Product::all();
+        $customers = Customer::all();
+        
+        return view('orders.create', compact('orders', 'products', 'customers'));
     }
 
     /**
@@ -35,7 +50,12 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Customer
+        ::create($request->all())
+        ->products()
+        ->create($request->all());
+        //Session::flash('message', 'Vásárló sikeresen felvive!');
+        return redirect('orders')->with('status', 'Új product/vásárló felvive!');
     }
 
     /**

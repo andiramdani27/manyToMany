@@ -13,17 +13,12 @@
                                         <a href="{{ URL::to('products/create') }}">Termék felvitele</a>
                                 </li>
                                 <li>
-                                        <a href="{{ URL::to('products/create') }}">Rendelés létrehozása</a>
+                                        <a href="{{ URL::to('orders/create') }}">Rendelés létrehozása</a>
                                 </li>
-                                {{--
                                 <li>
-                                        <a>
-                                                <form action="{{ route('products.destroy', $product) }}" method="post">
-                                                        {{ csrf_field() }} {{ method_field('delete') }}
-                                                        <button class="btn-link text-danger" type="submit">Termék törlése</button>
-                                                </form>
-                                        </a>
-                                </li> --}}
+                                        <a href="{{ URL::to('orders/index') }}">Rendelések </a>
+                                </li>
+                              
                 </ul>
         </nav>
         <main class="container pt-4">

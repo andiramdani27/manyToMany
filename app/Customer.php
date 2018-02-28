@@ -16,4 +16,10 @@ class Customer extends Model
         //return  $this->belongsToMany('App\Product')->withPivot('customer_product')->withTimestamps();
         return  $this->belongsToMany('App\Product')->withTimestamps();
     }
+
+    public function orders()
+    {
+        
+        return  $this->belongsToMany('App\Order')->withTimestamps();
+    }
 }

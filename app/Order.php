@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
      //public $timestamps = false;
-     protected $fillable = ['customer_id', 'product_id', 'quantity'];
+     protected $fillable = ['customer_id', 'product_id', 'ordered_quantity'];
 
      public static $rules = array(
          'customer_id' => 'required',
@@ -32,5 +32,7 @@ class Order extends Model
          return  $this->belongsTo('App\Customer')->withTimestamps();
  
      }
+
+    
  
 }
