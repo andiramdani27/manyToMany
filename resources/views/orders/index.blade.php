@@ -7,7 +7,9 @@
 
 		<li>
 			Rendelés azonosító: {{$order->id}} <br> {{ $order->customer_id}}. számú vevő : {{ $order->product_id}} számú termékből
-			: {{ $order->product_id}} darabot rendelt
+			: {{ $order->ordered_quantity}} darabot rendelt <br>
+			Ekkor : {{ $order->created_at}}
+			
 			<hr>
 		</li>
 

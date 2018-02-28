@@ -20,7 +20,7 @@ class OrderController extends Controller
         $orders =Order::all();
         return view('orders.index', compact('orders'));
         */
-        $orders = Order::all();
+        $orders = Order::orderBy('updated_at', 'desc')->get();
         $products = Product::all();
         $customers = Customer::all();
        
@@ -35,7 +35,7 @@ class OrderController extends Controller
     public function create()
     {
         //return view('orders.create');
-        $orders =Order::all();
+        $orders = Order::all();
         $products = Product::all();
         $customers = Customer::all();
         
@@ -58,11 +58,21 @@ class OrderController extends Controller
         //Session::flash('message', 'Vásárló sikeresen felvive!');
         return redirect('orders')->with('status', 'Új rendelés felvive!');
         */
+
+        /*
         $order = new Order;
         $order->update($request->product_id, $request->customer_id, $request->ordered_quantity);
         $order -> save();
-        
+        */
+       
+        $order = new Order;
+        $order->product_id = $request->input('product_id');
+        $order->customer_id = $request->input('customer_id');
+        $order->ordered_quantity = $request->input('ordered_quantity');
+        $order->save();
         return redirect('orders')->with('status', 'Új rendelés felvive!');
+
+        
     }
 
     /**
