@@ -23,6 +23,8 @@ class CreateOrdersTable extends Migration
             $table->unsignedInteger('customer_id')->index();
             $table->unsignedInteger('product_id')->index();
 
+            $table->unsignedInteger('ordered_quantity')->nullable();
+
             
             //OR
             //https://stackoverflow.com/questions/32954424/laravel-migration-array-type
