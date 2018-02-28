@@ -12,6 +12,9 @@
                                 <li>
                                         <a href="{{ URL::to('products/create') }}">Termék felvitele</a>
                                 </li>
+                                <li>
+                                        <a href="{{ URL::to('products/create') }}">Rendelés létrehozása</a>
+                                </li>
                                 {{--
                                 <li>
                                         <a>

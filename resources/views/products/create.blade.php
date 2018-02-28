@@ -1,6 +1,5 @@
 @extends ('layouts.master')
 
-{{--@include ('students.submitstudent')--}}
 
 @section ('form')
 <div class="row justify-content-center">
