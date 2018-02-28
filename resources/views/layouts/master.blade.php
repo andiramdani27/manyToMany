@@ -16,7 +16,7 @@
                                         <a href="{{ URL::to('orders/create') }}">Rendelés létrehozása</a>
                                 </li>
                                 <li>
-                                        <a href="{{ URL::to('orders/index') }}">Rendelések </a>
+                                        <a href="{{ URL::to('orders/') }}">Rendelések </a>
                                 </li>
                               
                 </ul>

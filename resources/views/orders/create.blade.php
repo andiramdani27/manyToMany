@@ -45,7 +45,7 @@
 @extends ('layouts.master') 
 
 @section('title', "Order") 
-@section('edit') 
+@section('main') 
 
 <div class="row justify-content-center">
   <div class="col-md-6">
@@ -57,37 +57,39 @@
             <form action="/orders" method="post">
           {{ csrf_field() }} {{ method_field('patch') }}
          
-          <div class="form-group">
-            <label for="ordered_quantity">rendelt mennyiség</label>
-            <input type="text" class="form-control" name="ordered_quantity" 
-            {{--  value="{{ $order->ordered_quantity }}">  --}}
-          </div>
+         
           <h3 class='h5 pb-2'>Rendelések</h3>
           <div class="row form-group">
             @foreach ($customers as $id => $customer)
-            @foreach ($products as $id => $product)
+            {{--  @foreach ($products as $id => $product)  --}}
             {{--  @foreach ($customers as $customer)  --}}
             <div class="form-check col-md-6">
               <label class="form-check-label" for="{{ $customer }}">
                   <input type="checkbox" name="customers[]" value="{{ $id }}"
-                    {{ $product->customers()->allRelatedIds()->contains($id) ? "checked" : "" }}>
-                  {{ $customer }} 
+                    {{ $customer->products()->allRelatedIds()->contains($id) ? "checked" : "" }}>
+                  {{ $customer->last_name  }} 
                 </label>
             </div>
-            @endforeach
+            {{--  @endforeach  --}}
             @endforeach
           </div>
-          {{--  <div class="row form-group">
+            <div class="row form-group">
             @foreach ($products as $id => $product)
             <div class="form-check col-md-6">
               <label class="form-check-label" for="{{ $product }}">
                   <input type="checkbox" name="products[]" value="{{ $id }}"
-                    {{ $customers->products()->allRelatedIds()->contains($id) ? "checked" : "" }}>
-                  {{ $product }} 
+                    {{ $product->customers()->allRelatedIds()->contains($id) ? "checked" : "" }}>
+                  {{ $product->product_name }} 
                 </label>
             </div>
             @endforeach
-          </div>  --}}
+          </div>  
+          <div class="form-group">
+            <label for="ordered_quantity">rendelt mennyiség</label>
+            <input type="number" class="form-control" name="ordered_quantity" 
+            {{--  value="{{ $order->ordered_quantity }}">  --}}
+          </div>
+
           <button type="submit" class="btn btn-primary">
             Update
           </button>

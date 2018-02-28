@@ -23,13 +23,15 @@ class Order extends Model
  
      public function products()
      {
-         return  $this->belongsToMany('App\Products')->withTimestamps();
+         //return  $this->belongsToMany('App\Product')->withTimestamps();
+         return  $this->belongsToMany('App\Product');
  
      }
 
      public function customer()
      {
-         return  $this->belongsTo('App\Customer')->withTimestamps();
+        //return  $this->belongsTo('App\Customer')->withTimestamps();
+         return  $this->belongsTo('App\Customer');
  
      }
 

@@ -1,39 +1,18 @@
 @extends ('layouts.master') 
-@section('main')
-<h1 class="ml-1">Vásárlók</h1>
+@section('index')
+<h1 class="ml-1">Rendelések</h1>
 <div class="row justify-content-center">
 	<ul>
-        {{--  @foreach ($orders->customer as $customer)  --}}
-        @foreach ($orders as $order)
-        {{--  @foreach ($order->customer as $customer)  --}}
-        {{--  @foreach ($customers as $customer)  --}}
-        
+		@foreach ($orders as $order)
 
-        <li>
-			{{ $order->id}}
-			
-        </li>
-		{{--  <li>
-			{{ $customer->last_name }} {{ $customer->first_name }}
-			<hr style="color:blue;"> Vásárló címe : <br> Lakóhely :{{ $customer->city }}, {{ $customer->street_name }} {{ $customer->street_number }} <br>Email:
-			{{ $customer->email }} <br>Telefon : {{ $customer->phone_number }}
-			{{ $customer->products->product_name }}
-			<br>
+		<li>
+			Rendelés azonosító: {{$order->id}} <br> {{ $order->customer_id}}. számú vevő : {{ $order->product_id}} számú termékből
+			: {{ $order->product_id}} darabot rendelt
 			<hr>
-        </li>  --}}
-        
-{{--  
-        <li>
-			{{ $order->id }} {{ $customer->first_name }} 
-			<hr style="color:blue;"> Vásárló címe : <br> Lakóhely :{{ $customer->city }}, {{ $customer->street_name }} {{ $customer->street_number }} <br>Email:
-			{{ $customer->email }} <br>Telefon : {{ $customer->phone_number }}
-			{{ $customer->products->product_name }}
-			<br>
-			<hr>
-		</li>  --}}
-        {{--  @endforeach  --}}
-        @endforeach
+		</li>
+
+
+		@endforeach
 	</ul>
-
 </div>
 @endsection
