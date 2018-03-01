@@ -36,17 +36,18 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        /*
+        
         Product::create($request->all());
         return redirect('products')->with('status', 'New Product Created!');
-        */
-
+        
+        /*
         Product
         ::create($request->all())
         ->pivot()
         ->create($request->ordered_quantity);
         //Session::flash('message', 'Vásárló sikeresen felvive!');
         return redirect('products')->with('status', 'Új product felvive!');
+        */
     }
 
     /**

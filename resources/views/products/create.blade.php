@@ -35,13 +35,13 @@
               <span class="help-block">{{ $errors->first('VAT') }}</span>
           @endif
       </div>
-      <div class="form-group{{ $errors->has('ordered_quantity') ? ' has-error' : '' }}">
+      {{--  <div class="form-group{{ $errors->has('ordered_quantity') ? ' has-error' : '' }}">
           <label for="ordered_quantity">Rendelt mennyiség</label>
           <input type="text" class="form-control" id="ordered_quantity" name="ordered_quantity" required placeholder="Rendelt mennyiség" value="{{ old('ordered_quantity') }}">
           @if($errors->has('ordered_quantity'))
               <span class="help-block">{{ $errors->first('ordered_quantity') }}</span>
           @endif
-      </div>
+      </div>  --}}
 
         <button type="submit" class="btn btn-primary">
           Felvisz

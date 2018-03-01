@@ -59,7 +59,7 @@
 			Termék neve : {{ $product->product_name }} <br> 
 			Ára: {{ $product->price }} <br>
 			AFA :({{ $product->VAT }})% <br>
-			Rendelt:mennyiség: {{ $product->ordered_quantity}}  
+			{{--  Rendelt:mennyiség: {{ $product->ordered_quantity}}    --}}
 			<hr>
 			 
 

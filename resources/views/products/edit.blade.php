@@ -1,26 +1,6 @@
 @extends ('layouts.master') 
 
-{{--  <nav class="navbar navbar-inverse">
-  <div class="navbar-header">
 
-    <ul class="nav navbar-nav">
-      <li>
-        <a href="{{ URL::to('products') }}">Összes Termék</a>
-      </li>
-      <li>
-        <a href="{{ URL::to('products/create') }}">Termék felvitele</a>
-      </li>
-      <li>
-        <a>
-          <form action="{{ route('products.destroy', $product) }}" method="post">
-            {{ csrf_field() }} {{ method_field('delete') }}
-            <button class="btn-link text-danger" type="submit">Termék törlése</button>
-          </form>
-        </a>
-      </li>
-    </ul>
-  </div>
-</nav>  --}}
 
 @section('title', "EDIT $product->product_name") 
 @section('edit') {{-- @foreach ($product->customers as $customers)
@@ -100,10 +80,10 @@
             <label for="VAT">Áfa</label>
             <input type="text" class="form-control" name="VAT" value="{{ $product->VAT }}">
           </div>
-          <div class="form-group">
+          {{--  <div class="form-group">
             <label for="ordered_quantity">rendelt mennyiség</label>
             <input type="text" class="form-control" name="ordered_quantity" value="{{ $product->ordered_quantity }}">
-          </div>
+          </div>  --}}
           <h3 class='h5 pb-2'>Vásárlók</h3>
           <div class="row form-group">
             @foreach ($customers as $id => $customer)
