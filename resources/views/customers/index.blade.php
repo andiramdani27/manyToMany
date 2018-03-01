@@ -75,9 +75,13 @@
 			{{ $customer->email }} <br>Telefon : {{ $customer->phone_number }} <br>
 			
 			@foreach ($customer->products as $product)
+			<ul>
+				<li>
 			Termék : {{ $product->product_name }} ,
 			Ár : {{ $product->price }} forint , 
-			ÁFA : {{ $product->VAT }} ,
+			ÁFA : {{ $product->VAT }} , <br>
+		</li>
+		</ul> 
 			{{--  Rendelt mennyiség : {{ $product->ordered_quantity }} <br>  --}}
 			@endforeach
 

@@ -26,7 +26,7 @@
             <div class="col-md-4 d-flex flex-column">
   
               <ul class="list-group">
-                <li class="list-group-item text-muted">Óvodás azonosítója: {{ $customer->id }}</li>
+                <li class="list-group-item text-muted">Vásárló azonosítója: {{ $customer->id }}</li>
                 <li class="list-group-item text-muted">Lakóhely: {{ $customer->city }}</li>
                 <li class="list-group-item text-muted">Irányítószám: {{ $customer->zip }}</li>
                 <li class="list-group-item text-muted">Utcanév: {{ $customer->street_name }}</li>
@@ -34,7 +34,7 @@
                 <li class="list-group-item text-muted">Telefonszám : {{ $customer->phone_number }}</li>
                 <li class="list-group-item text-muted">Email : {{ $customer->email }}</li>
                 @foreach ($customer->products as $product)
-                <li class="list-group-item text-muted">Prod : {{ $product->product_name }}</li>
+                <li class="list-group-item text-muted">Rendelt termék : {{ $product->product_name }}</li>
                 <li class="list-group-item text-muted">Ár : {{ $product->price }} forint</li>
                 <li class="list-group-item text-muted">ÁFA : {{ $product->VAT }}</li>
                 {{--  <li class="list-group-item text-muted">Rendelt mennyiség : {{ $product->ordered_quantity }}</li>  --}}
