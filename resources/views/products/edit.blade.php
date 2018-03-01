@@ -76,15 +76,27 @@
             <label for="price">Ár</label>
             <input type="text" class="form-control" name="price" value="{{ $product->price }}">
           </div>
-          <div class="form-group">
+          {{--  <div class="form-group">
             <label for="VAT">Áfa</label>
             <input type="text" class="form-control" name="VAT" value="{{ $product->VAT }}">
+          </div>  --}}
+          <div >
+              <label for="VAT">ÁFA</label><br>
+              
+  
+              <input type="radio" name="VAT" value="5"> 5<br>
+              <input type="radio" name="VAT" value="18"> 18%<br>
+              <input type="radio" name="VAT" value="27"> 27% <br>
+  
+              @if($errors->has('VAT'))
+                  <span class="help-block">{{ $errors->first('VAT') }}</span>
+              @endif
           </div>
           {{--  <div class="form-group">
             <label for="ordered_quantity">rendelt mennyiség</label>
             <input type="text" class="form-control" name="ordered_quantity" value="{{ $product->ordered_quantity }}">
           </div>  --}}
-          <h3 class='h5 pb-2'>Vásárlók</h3>
+          <h3 class='h4 pb-2'>Vásárlók</h3>
           <div class="row form-group">
             @foreach ($customers as $id => $customer)
             <div class="form-check col-md-6">

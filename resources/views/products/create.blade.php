@@ -28,13 +28,26 @@
               <span class="help-block">{{ $errors->first('price') }}</span>
           @endif
       </div>
-      <div class="form-group{{ $errors->has('VAT') ? ' has-error' : '' }}">
+      {{--  <div class="form-group{{ $errors->has('VAT') ? ' has-error' : '' }}">
           <label for="VAT">ÁFA</label>
           <input type="text" class="form-control" id="VAT" name="VAT" required placeholder="ÁFA" value="{{ old('VAT') }}"> 
           @if($errors->has('VAT'))
               <span class="help-block">{{ $errors->first('VAT') }}</span>
           @endif
-      </div>
+      </div>  --}}
+
+      <div >
+            <label for="VAT">ÁFA</label><br>
+            
+
+            <input type="radio" name="VAT" value="5"> 5<br>
+            <input type="radio" name="VAT" value="18"> 18%<br>
+            <input type="radio" name="VAT" value="27"> 27%
+
+            @if($errors->has('VAT'))
+                <span class="help-block">{{ $errors->first('VAT') }}</span>
+            @endif
+        </div>
       {{--  <div class="form-group{{ $errors->has('ordered_quantity') ? ' has-error' : '' }}">
           <label for="ordered_quantity">Rendelt mennyiség</label>
           <input type="text" class="form-control" id="ordered_quantity" name="ordered_quantity" required placeholder="Rendelt mennyiség" value="{{ old('ordered_quantity') }}">
